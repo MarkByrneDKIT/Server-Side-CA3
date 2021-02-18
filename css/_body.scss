@@ -1,6 +1,6 @@
 /* Here is where the body styles start */
 body {
-    background-color: $richred;
+    background-color: $black;
 }
 
 .container {
@@ -34,7 +34,7 @@ ul {
 
 
 a:hover {
-    color: rgb(208, 133, 4);
+    color: $midGreen;
 }
 table {
     border: 1px solid black;

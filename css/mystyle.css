@@ -40,7 +40,7 @@ nav ul li {
 
 /* Here is where the body styles start */
 body {
-  background-color: #bd0819;
+  background-color: black;
 }
 
 .container {
@@ -75,7 +75,7 @@ ul li a {
 }
 
 a:hover {
-  color: #d08504;
+  color: #1f772b;
 }
 
 table {

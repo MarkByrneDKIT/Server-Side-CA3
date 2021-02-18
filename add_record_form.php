@@ -30,6 +30,10 @@ include('includes/header.php');
             <input type="input" name="name">
             <br>
 
+            <label>CPU:</label>
+            <input type="input" name="CPU">
+            <br>
+
             <label>List Price:</label>
             <input type="input" name="price">
             <br>        
