@@ -25,22 +25,31 @@ include('includes/header.php');
 
             <label>Category ID:</label>
             <input type="category_id" name="category_id"
-                   value="<?php echo $records['categoryID']; ?>">
+                   value="<?php echo $records['categoryID']; ?>" >
             <br>
 
             <label>Name:</label>
             <input type="input" name="name"
-                   value="<?php echo $records['name']; ?>">
+                   value="<?php echo $records['name']; ?>"
+                   required placeholder="e.g. Joe Blogs">
             <br>
 
             <label>CPU:</label>
             <input type="input" name="CPU"
-                   value="<?php echo $records['CPU']; ?>">
+                   value="<?php echo $records['CPU']; ?>"
+                   required placeholder="e.g. Intel Core I5">
             <br>
 
             <label>List Price:</label>
             <input type="input" name="price"
-                   value="<?php echo $records['price']; ?>">
+                   value="<?php echo $records['price']; ?>"
+                   required placeholder="e.g. €345.67">
+            <br>
+
+            <label>Release Date:</label>
+            <input type="input" name="date"
+                   value="<?php echo $records['date']; ?>"
+                   required placeholder="e.g. YYYY-MM-DD">
             <br>
 
             <label>Image:</label>

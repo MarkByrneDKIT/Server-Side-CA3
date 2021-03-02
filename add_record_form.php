@@ -27,15 +27,19 @@ include('includes/header.php');
             </select>
             <br>
             <label>Name:</label>
-            <input type="input" name="name">
+            <input type="input" name="name" required placeholder="e.g. Budget Computer" pattern="[a-zA-Z\s]+" label="No Numbers Allowed.">
             <br>
 
             <label>CPU:</label>
-            <input type="input" name="CPU">
+            <input type="input" name="CPU" required placeholder="e.g. Intel Core I5" pattern=".{2,}" title="Please Enter Full CPU Name.">
+            <br>
+
+            <label>Release Date:</label>
+            <input type="input" name="date" required placeholder="e.g. YYYY-MM-DD" pattern="\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])*" title="Please Enter The Date In The Correct Format.">
             <br>
 
             <label>List Price:</label>
-            <input type="input" name="price">
+            <input type="input" name="price" required placeholder="e.g. €345.67">
             <br>        
             
             <label>Image:</label>

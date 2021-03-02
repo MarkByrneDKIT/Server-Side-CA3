@@ -4,11 +4,12 @@
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
 $CPU = filter_input(INPUT_POST, 'CPU');
+$date = filter_input(INPUT_POST, 'date');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 
 // Validate inputs
 if ($category_id == null || $category_id == false ||
-    $name == null || $price == null || $price == false || $CPU == null ) {
+    $name == null || $CPU == null || $date == null || $price == null || $price == false   ) {
     $error = "Invalid Computer data. Check all fields and try again.";
     include('error.php');
     exit();
@@ -64,13 +65,14 @@ if ($category_id == null || $category_id == false ||
 
     // Add the product to the database 
     $query = "INSERT INTO records
-                 (categoryID, name, CPU, price, image)
+                 (categoryID, name, CPU, date, price, image)
               VALUES
-                 (:category_id, :name, CPU, :price, :image)";
+                 (:category_id, :name, :CPU, :date, :price, :image)";
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':CPU', $CPU);
+    $statement->bindValue(':date', $date);
     $statement->bindValue(':price', $price);
     $statement->bindValue(':image', $image);
     $statement->execute();
