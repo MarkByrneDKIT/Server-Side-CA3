@@ -12,5 +12,5 @@ This repoistory hosts a working computer shop PHP crud application. Please feel 
 * Configure the database.php file to connect to your SQL database
 
 ## Preview of Application
-![Preview](images/computer-shop.png)
+![Preview](image_uploads/computer-shop.png)
 
