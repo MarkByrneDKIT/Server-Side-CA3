@@ -2,8 +2,8 @@
 A starter project for DkIT students on the Server-Side module.
 
 ### Software Needed
-⋅⋅* Apache VS Code
-
+- Apache
+- Software that can run php e.g VS CODE
 
 ### Instructions
 * Create a MySQL database called computer_shop in PHP MyAdmin
