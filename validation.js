@@ -85,13 +85,13 @@ function name_validation(){
     //category id validation starts
     function category_validation(){
         'use strict';
-        var idformat = /^[1-3]$/;
+        var idformat = /^[1-4]$/;
         var id_name = document.getElementById("catID");
         var id_value = document.getElementById("catID").value;
         var id_length = id_value.length;
         if(!id_value.match(idformat) || id_length === 0)
         {
-        document.getElementById('id_err').innerHTML = 'This is not a valid id the number has to be between 1-3.';
+        document.getElementById('id_err').innerHTML = 'This is not a valid id the number has to be between 1-4.';
         id_name.focus();
         document.getElementById('id_err').style.color = "#FF0000";
         }
