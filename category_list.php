@@ -42,7 +42,7 @@ include('includes/header.php');
 
         <label>Name:</label>
         <input type="input" name="name">
-        <input id="add_category_button" type="submit" value="Add">
+        <input class="catButton" id="add_category_button" type="submit" value="Add">
     </form>
     <br>
     <p><a href="index.php">Homepage</a></p>

@@ -27,19 +27,19 @@ include('includes/header.php');
             </select>
             <br>
             <label>Name:</label>
-            <input type="input" name="name" required placeholder="e.g. Budget Computer" pattern="[a-zA-Z\s]+" label="No Numbers Allowed.">
+            <input id="name" type="input" name="name" required placeholder="e.g. Budget Computer" pattern="[a-zA-Z\s]+" label="No Numbers Allowed." onBlur="name_validation();"><span id="name_err"></span>
             <br>
 
             <label>CPU:</label>
-            <input type="input" name="CPU" required placeholder="e.g. Intel Core I5" pattern=".{2,}" title="Please Enter Full CPU Name.">
+            <input id="cpu" type="input" name="CPU" required placeholder="e.g. Intel Core I5" pattern=".{2,}" title="Please Enter Full CPU Name." onBlur="CPU_validation();"><span id="cpu_err"></span>
             <br>
 
             <label>Release Date:</label>
-            <input type="input" name="date" required placeholder="e.g. YYYY-MM-DD" pattern="\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])*" title="Please Enter The Date In The Correct Format.">
+            <input id="date" type="input" name="date" required placeholder="e.g. YYYY-MM-DD" pattern="\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])*" title="Please Enter The Date In The Correct Format." onBlur="date_validation();"><span id="date_err"></span>
             <br>
 
             <label>List Price:</label>
-            <input type="input" name="price" required placeholder="e.g. €345.67">
+            <input id="price" type="input" name="price" required placeholder="e.g. €345.67" onBlur="price_validation();"><span id="price_err"></span>
             <br>        
             
             <label>Image:</label>
@@ -54,3 +54,4 @@ include('includes/header.php');
     <?php
 include('includes/footer.php');
 ?>
+<script src="validation.js"></script>;
