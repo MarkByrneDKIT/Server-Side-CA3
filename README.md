@@ -11,6 +11,9 @@ This repoistory hosts a working computer shop PHP crud application. Please feel 
 * Move the PHP files in to your htdocs folder so Apache can process the PHP code
 * Configure the database.php file to connect to your SQL database
 
+## Link 
+https://mysql04.comp.dkit.ie/D00228088/Server-Side-CA2/index.php "Computer Shop Crud Application")
+
 ## Preview of Application
 ![Preview](image_uploads/computer-shop.png)
 
