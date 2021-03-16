@@ -43,7 +43,7 @@ include('includes/header.php');
             <br>        
             
             <label>Image:</label>
-            <input type="file" name="image" accept="image/*" />
+            <input type="file" name="image" accept="image/*" required/>
             <br>
             
             <label>&nbsp;</label>
