@@ -1,6 +1,6 @@
 /* Here is where the body styles start */
 body {
-    background-image: linear-gradient(to bottom right, red, yellow);
+    background-image: linear-gradient(to bottom right, black, $midGreen);
 }
 
 .container {
@@ -29,7 +29,7 @@ ul {
         padding: 0;
         a {
             border: none;
-            color: red;
+            color: black;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -39,10 +39,10 @@ ul {
 }
 
 li:hover{
-    background-color: orange;
+    background-color: $midGreen;
 }
 a:hover {
-    color:black;
+    color:white;
 
 }
 table {
@@ -102,5 +102,32 @@ br {
         font-size: 13px;
       }
   }
+
+  #edit_button {
+	background-color: blue;
+	color: white;
+	border-radius: 6px;
+	&:hover {
+		background-color: $babyBlue;
+		color: black;
+		cursor: pointer;
+	}
+}
+
+#delete_button {
+	background-color: $richred;
+	color: white;
+	border-radius: 6px;
+	&:hover {
+		background-color: $darkRed;
+		color: black;
+		cursor: pointer;
+	}
+}
+
+
+
+  
+  
 
   

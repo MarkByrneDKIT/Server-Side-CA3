@@ -1,7 +1,9 @@
-</head>
-</head>
 
-<body>
+
+<div class="container">
+    <?php
+    include('includes/header.php');
+    ?>
     <h1>Contact us</h1>
     <form method="POST" name="contactform" action="contact-form-handler.php">
         <p>
@@ -11,6 +13,10 @@
         <p>
             <label for='email'>Email Address:</label> <br>
             <input type="text" name="email"> <br>
+        </p>
+        <p>
+            <label for='phone'>Phone Number:</label> <br>
+            <input type="text" name="phone"> <br>
         </p>
         <p>
             <label for='message'>Message:</label> <br>
@@ -24,8 +30,9 @@
         frmvalidator.addValidation("name", "req", "Please provide your name");
         frmvalidator.addValidation("email", "req", "Please provide your email");
         frmvalidator.addValidation("email", "email", "Please enter a valid email address");
+        frmvalidator.addValidation("phone", "req", "Please provide a phone number");
     </script>
 
-</body>
-
-</html>
+<?php
+include('includes/footer.php');
+?>

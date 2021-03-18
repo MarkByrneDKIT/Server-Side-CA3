@@ -22,11 +22,6 @@ include('includes/header.php');
         </p>
         <input type="submit" value="Submit"><br>
     </form>
-
-
-
-
-
 <?php        
 include('includes/footer.php');
 ?>
