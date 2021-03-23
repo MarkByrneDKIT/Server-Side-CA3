@@ -17,7 +17,14 @@ require 'library-folder/password.php';
  */
 require 'login_connect.php';
 
+?>
 
+<div class="container">
+<?php
+include('includes/header.php');
+?>
+
+<?php
 //If the POST var "register" exists (our submit button), then we can
 //assume that the user has submitted the registration form.
 if(isset($_POST['register'])){
@@ -77,10 +84,7 @@ if(isset($_POST['register'])){
 }
 
 ?>
-<div class="container">
-<?php
-include('includes/header.php');
-?>
+
     <body>
         <h1>Register</h1>
         <form action="register.php" method="post">

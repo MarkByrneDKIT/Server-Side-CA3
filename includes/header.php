@@ -11,7 +11,9 @@
 <div class="topnav">
   <a class="active" href="index.php">Home</a>
   <a href="add_record_form.php">Add Pc</a>
+  <a href="manage_pcs.php">Manage Pcs</a>
   <a href="category_list.php">Manage Categories</a>
+  <a href="contact_form.php">Contact</a>
   <a href="register.php">Register</a>
   <a href="login.php">Login</a>
   <a href="logout.php">Logout</a>

@@ -57,8 +57,6 @@ include('includes/sidebar.php');
 <th>CPU</th>
 <th>Release Date</th>
 <th>Price</th>
-<th>Delete</th>
-<th>Edit</th>
 </tr>
 <?php foreach ($records as $record) : ?>
 <tr>
@@ -66,23 +64,8 @@ include('includes/sidebar.php');
 <td><?php echo $record['name']; ?></td>
 <td><?php echo $record['CPU']; ?></td>
 <td><?php echo $record['date']; ?></td>
-<td class="right"><?php echo $record['price']; ?></td>
-<td><form action="delete_record.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="record_id"
-value="<?php echo $record['recordID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $record['categoryID']; ?>">
-<input type="submit" value="Delete" id="delete_button">
-</form></td>
-<td><form action="edit_record_form.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="record_id"
-value="<?php echo $record['recordID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $record['categoryID']; ?>">
-<input type="submit" value="Edit" id="edit_button">
-</form></td>
+<td><?php echo $record['price']; ?></td>
+</form>
 </tr>
 <?php endforeach; ?>
 </table>
