@@ -12,8 +12,8 @@
   <a class="active" href="index.php">Home</a>
   <a href="add_record_form.php">Add Pc</a>
   <a href="category_list.php">Manage Categories</a>
-  <a href="">Register</a>
-  <a href="">Login</a>
-  <a href="">Logout</a>
+  <a href="register.php">Register</a>
+  <a href="login.php">Login</a>
+  <a href="logout.php">Logout</a>
 </div>
 </header>
