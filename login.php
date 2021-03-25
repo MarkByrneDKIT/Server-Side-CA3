@@ -25,10 +25,11 @@ if(isset($_POST['login'])){
     
     //Retrieve the field values from our login form.
     $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
+    $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
     $passwordAttempt = !empty($_POST['password']) ? trim($_POST['password']) : null;
     
     //Retrieve the user account information for the given username.
-    $sql = "SELECT id, username, password FROM users WHERE username = :username";
+    $sql = "SELECT id, username, email, password FROM users WHERE username = :username";
     $stmt = $pdo->prepare($sql);
     
     //Bind value.
@@ -44,13 +45,14 @@ if(isset($_POST['login'])){
     if($user === false){
         //Could not find a user with that username!
         //PS: You might want to handle this error in a more user-friendly manner!
-        die('Incorrect username / password combination!');
+        header("Location: login_error.php");
     } else{
         //User account found. Check to see if the given password matches the
         //password hash that we stored in our users table.
         
         //Compare the passwords.
         $validPassword = password_verify($passwordAttempt, $user['password']);
+
         
         //If $validPassword is TRUE, the login has been successful.
         if($validPassword){
@@ -65,7 +67,7 @@ if(isset($_POST['login'])){
             
         } else{
             //$validPassword was FALSE. Passwords do not match.
-            die('Incorrect username / password combination!');
+            header("Location: login_error.php");
         }
     }
     
@@ -85,6 +87,8 @@ include('includes/header.php');
         <form action="login.php" method="post">
             <label for="username">Username</label>
             <input type="text" id="username" name="username"><br>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email"><br>
             <label for="password">Password</label>
             <input type="text" id="password" name="password"><br>
             <input type="submit" name="login" value="Login">

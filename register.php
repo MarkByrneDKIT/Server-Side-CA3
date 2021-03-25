@@ -31,6 +31,7 @@ if(isset($_POST['register'])){
     
     //Retrieve the field values from our registration form.
     $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
+    $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
     $pass = !empty($_POST['password']) ? trim($_POST['password']) : null;
     
     //TO ADD: Error checking (username characters, password length, etc).
@@ -65,11 +66,12 @@ if(isset($_POST['register'])){
     
     //Prepare our INSERT statement.
     //Remember: We are inserting a new row into our users table.
-    $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+    $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
     $stmt = $pdo->prepare($sql);
     
     //Bind our variables.
     $stmt->bindValue(':username', $username);
+    $stmt->bindValue(':email', $email);
     $stmt->bindValue(':password', $passwordHash);
 
     //Execute the statement and insert the new account.
@@ -78,7 +80,7 @@ if(isset($_POST['register'])){
     //If the signup process is successful.
     if($result){
         //What you do here is up to you!
-        echo 'Thank you for registering with our website.';
+        echo("Thank you fro registering!");
     }
     
 }
@@ -90,6 +92,8 @@ if(isset($_POST['register'])){
         <form action="register.php" method="post">
             <label for="username">Username</label>
             <input type="text" id="username" name="username"><br>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email"><br>
             <label for="password">Password</label>
             <input type="text" id="password" name="password"><br>
             <input type="submit" name="register" value="Register"></button>

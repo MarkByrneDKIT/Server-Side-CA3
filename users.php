@@ -23,39 +23,11 @@ echo 'Congratulations! You are logged in!';
 
 require_once('database.php');
 
-// Get category ID
-if (!isset($category_id)) {
-$category_id = filter_input(INPUT_GET, 'category_id', 
-FILTER_VALIDATE_INT);
-if ($category_id == NULL || $category_id == FALSE) {
-$category_id = 1;
-}
-}
 
-// Get name for current category
-$queryCategory = "SELECT * FROM categories
-WHERE categoryID = :category_id";
-$statement1 = $db->prepare($queryCategory);
-$statement1->bindValue(':category_id', $category_id);
-$statement1->execute();
-$category = $statement1->fetch();
-$statement1->closeCursor();
-$category_name = $category['categoryName'];
-
-// Get all categories
-$queryAllCategories = 'SELECT * FROM categories
-ORDER BY categoryID';
-$statement2 = $db->prepare($queryAllCategories);
-$statement2->execute();
-$categories = $statement2->fetchAll();
-$statement2->closeCursor();
-
-// Get records for selected category
-$queryRecords = "SELECT * FROM records
-WHERE categoryID = :category_id
-ORDER BY recordID";
+// Get records for users
+$queryRecords = "SELECT * FROM users";
 $statement3 = $db->prepare($queryRecords);
-$statement3->bindValue(':category_id', $category_id);
+$statement3->bindValue(':id', $id);
 $statement3->execute();
 $records = $statement3->fetchAll();
 $statement3->closeCursor();
@@ -64,29 +36,28 @@ $statement3->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-<h1></h1>
-<?php
-include('includes/sidebar.php');
-?>
+
 
 <section>
 <!-- display a table of records -->
-<h2 id="category_name"><?php echo $category_name; ?></h2>
+<h2>Users</h2>
 <table>
 <tr>
-<th>Image</th>
-<th>Name</th>
-<th>CPU</th>
-<th>Release Date</th>
-<th>Price</th>
+
+<th>User ID</th>
+<th>User Name</th>
+<th>Delete</th>
 </tr>
 <?php foreach ($records as $record) : ?>
 <tr>
-<td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
-<td><?php echo $record['name']; ?></td>
-<td><?php echo $record['CPU']; ?></td>
-<td><?php echo $record['date']; ?></td>
-<td><?php echo $record['price']; ?></td>
+<td><?php echo $record['id']; ?></td>
+<td><?php echo $record['username']; ?></td>
+<td>
+    <form action="delete_user.php" method="post" id="delete_product_form">
+        <input type="hidden" name="id" value="<?php echo $id['id']; ?>">
+        <input type="submit" value="Delete" id="delete_button">
+    </form>
+</td>
 </form>
 </tr>
 <?php endforeach; ?>
