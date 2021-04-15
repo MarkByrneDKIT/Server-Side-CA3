@@ -2,14 +2,13 @@
 require_once('database.php');
 
 // Get IDs
-$id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
-
+$user_id = filter_input(INPUT_POST, 'user_id', FILTER_VALIDATE_INT);
 // Delete the product from the database
-if ($id != false) {
+if ($user_id != false) {
     $query = "DELETE FROM users
-              WHERE id = :id";
+              WHERE id = :user_id";
     $statement = $db->prepare($query);
-    $statement->bindValue(':id', $id);
+    $statement->bindValue(':user_id', $user_id);
     $statement->execute();
     $statement->closeCursor();
 }

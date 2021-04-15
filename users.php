@@ -53,8 +53,10 @@ include('includes/header.php');
 <td><?php echo $record['id']; ?></td>
 <td><?php echo $record['username']; ?></td>
 <td>
-    <form action="delete_user.php" method="post" id="delete_product_form">
-        <input type="hidden" name="id" value="<?php echo $id['id']; ?>">
+    <form action="delete_user.php" method="post"
+        id="delete_record_form">
+        <input type="hidden" name="user_id"
+        value="<?php echo $record['id']; ?>">
         <input type="submit" value="Delete" id="delete_button">
     </form>
 </td>
