@@ -12,7 +12,7 @@ This repoistory hosts a working computer shop PHP crud application. Please feel 
 * Configure the database.php file to connect to your SQL database
 
 ## Link 
-https://mysql04.comp.dkit.ie/D00228088/Server-Side-CA2/index.php "Computer Shop Crud Application")
+https://mysql04.comp.dkit.ie/D00228088/Server-Side-CA3/index.php "Computer Shop Crud Application")
 
 ## Preview of Application
 ![Preview](image_uploads/computer-shop.png)
