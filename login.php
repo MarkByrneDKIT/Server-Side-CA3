@@ -61,7 +61,7 @@ if(isset($_POST['login'])){
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['logged_in'] = time();
             
-            //Redirect to our protected page, which we called home.php
+            //Redirect to our protected page, which we called index.php
             header('Location: index.php');
             exit;
             
@@ -86,11 +86,11 @@ include('includes/header.php');
         <h1>Login</h1>
         <form action="login.php" method="post">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username"><br>
+            <input class="register_inputs" type="text" id="username" name="username"><br>
             <label for="email">Email</label>
-            <input type="text" id="email" name="email"><br>
+            <input class="register_inputs" type="text" id="email" name="email"><br>
             <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br>
+            <input class="register_inputs" type="text" id="password" name="password"><br>
             <input type="submit" name="login" value="Login">
         </form>
         <?php

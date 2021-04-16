@@ -80,7 +80,7 @@ if(isset($_POST['register'])){
     //If the signup process is successful.
     if($result){
         //What you do here is up to you!
-        echo("Thank you fro registering!");
+        echo("Thank you for registering!");
     }
     
 }
@@ -91,13 +91,14 @@ if(isset($_POST['register'])){
         <h1>Register</h1>
         <form action="register.php" method="post">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username"><br>
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email"><br>
+            <input required class="register_inputs" type="text" id="username" name="username" onBlur="username_validation();"><span id="username_err"></span><br>
+            <label  for="email">Email</label>
+            <input required class="register_inputs" type="text" id="email" name="email" onBlur="email_validation();"><span id="email_err"></span><br>
             <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br>
+            <input required class="register_inputs" type="text" id="password" name="password"  onBlur="password_validation();"><span id="password_err"></span><br><br>
             <input type="submit" name="register" value="Register"></button>
         </form>
         <?php
 include('includes/footer.php');
 ?>
+<script src="validation.js"></script>;

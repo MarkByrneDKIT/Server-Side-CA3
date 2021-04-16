@@ -125,8 +125,27 @@ br {
 	}
 }
 
+.register_inputs
+{
+    position: absolute;
+    left: 200px;
+}
 
-
+#username_err
+{
+    position: absolute;
+    left: 380px;
+}
+#email_err
+{
+    position: absolute;
+    left: 380px;
+}
+#password_err
+{
+    position: absolute;
+    left: 380px;
+}
   
   
 
